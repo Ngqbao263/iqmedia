@@ -69,17 +69,53 @@
             {{-- Cột phải: Danh mục --}}
             <div class="col-md-3">
                 <div class="bg-white shadow-sm rounded-3 p-3">
-                    <h5 class="mb-3">Danh mục</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('admin.dichvu') }}" class="d-block py-1">Cho thuê màn hinh ánh sáng</a></li>
-                        <li><a href="{{ route('admin.quangcao') }}" class="d-block py-1">Cho thuê màn hình LED</a></li>
-                        <li><a href="{{ route('admin.index') }}" class="d-block py-1">Dịch vụ thương mại</a></li>
-                        <li><a href="{{ route('admin.dichvu') }}" class="d-block py-1">Thi công PhotoBooth và Backdrop</a>
+                    <h5 class="mb-3 fw-bold text-uppercase">Danh mục</h5>
+                    <ul class="list-unstyled category-list">
+                        <li>
+                            <a href="{{ route('admin.dichvu') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Cho thuê âm thanh ánh sáng
+                                <span class="plus-sign">+</span>
+                            </a>
                         </li>
-                        <li><a href="{{ route('admin.quangcao') }}" class="d-block py-1">Tổ chức sự kiện</a></li>
-                        <li><a href="{{ route('admin.index') }}" class="d-block py-1">Dịch vụ thương mại</a></li>
+                        <li>
+                            <a href="{{ route('admin.quangcao') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Cho thuê màn hình Led
+                                <span class="plus-sign">+</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.index') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Dịch vụ thương mại
+                                <span class="plus-sign">+</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.dichvu') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Thi công PhotoBooth và Backdrop
+                                <span class="plus-sign">+</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.quangcao') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Tổ chức sự kiện
+                                <span class="plus-sign">+</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.index') }}"
+                                class="d-flex justify-content-between align-items-center py-2 text-decoration-none text-dark">
+                                Quay phim - Chụp hình sự kiện chuyên nghiệp tại IQ MEDIA
+                                <span class="plus-sign">+</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
 
                 {{-- Hiển thị bài viết mới của danh mục hiện tại --}}
                 @if (isset($relatedPosts) && $relatedPosts->count())

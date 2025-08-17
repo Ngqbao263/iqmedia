@@ -847,4 +847,17 @@ footer {
     padding: 10px 0;
 }
 
+/* =====ĐỐI TÁC TIN CẬY===== */
+.client h2 {
+    font-size: 25px;
+}
 
+.client p {
+    font-size: 15px;
+}
+
+.client img {
+    width: 200px;
+    height: auto;
+    margin-top: 30px;
+}

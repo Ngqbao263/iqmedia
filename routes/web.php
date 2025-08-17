@@ -24,7 +24,7 @@ Route::middleware('guest')->group(function () {
     // Đăng ký
     Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
-    
+
     // Đăng nhập
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
@@ -58,28 +58,28 @@ Route::get('/collections/{category}', [ProductController::class, 'category'])->n
 Route::prefix('api')->group(function () {
     // Tìm kiếm sản phẩm
     Route::get('/products/search', [ProductController::class, 'search'])->name('api.products.search');
-    
+
     // Sản phẩm nổi bật
     Route::get('/products/featured', [ProductController::class, 'featured'])->name('api.products.featured');
 });
 
 //route admin
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    
+
     // Dashboard admin
     Route::get('/', [PostController::class, 'index'])->name('index');
-    
+
     //quan ly bai viet
     Route::get('/create', [PostController::class, 'create'])->name('create');
     Route::post('/', [PostController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [PostController::class, 'edit'])->name('edit');
     Route::put('/{id}', [PostController::class, 'update'])->name('update');
-    Route::delete('/{id}', [PostController::class, 'destroy'])->name('destroy');
+Route::delete('/{id}', [PostController::class, 'destroy'])->name('destroy');
     Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
     Route::post('/upload-image', [PostController::class, 'uploadImage'])->name('uploadImage');
     Route::get('/dich-vu', [PostController::class, 'dichVu'])->name('dichvu');
     Route::get('/quang-cao', [PostController::class, 'quangCao'])->name('quangcao');
-    
+
     //quan ly san pham bang resource
     Route::resource('products', AdminProductController::class)->names([
         'index' => 'products.index',
@@ -90,7 +90,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
         'update' => 'products.update',
         'destroy' => 'products.destroy',
     ]);
-    
+
     // Xóa ảnh sản phẩm
     Route::delete('products/{product}/images/{image}', [AdminProductController::class, 'deleteImage'])
         ->name('products.delete-image');

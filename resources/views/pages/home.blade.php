@@ -6,30 +6,27 @@
     {{-- Banner Carousel --}}
     <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="margin-top: 0;">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0"
-                class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>  
+            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
-        
+
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://iqmedia.com.vn/assets/slider_1.webp?1715932071" 
-                     class="d-block w-100 banner-image" 
-                     alt="Banner 1">
+                <img src="https://iqmedia.com.vn/assets/slider_1.webp?1715932071" class="d-block w-100 banner-image"
+                    alt="Banner 1">
             </div>
             <div class="carousel-item">
-                <img src="https://iqmedia.com.vn/assets/slider_2.webp?1715932071" 
-                     class="d-block w-100 banner-image" 
-                     alt="Banner 2">
+                <img src="https://iqmedia.com.vn/assets/slider_2.webp?1715932071" class="d-block w-100 banner-image"
+                    alt="Banner 2">
             </div>
         </div>
-        
+
         <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        
+
         <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -39,7 +36,7 @@
     {{-- DỊCH VỤ --}}
     <section class="my-4">
         <div class="container custom-container">
-            <div class="border rounded p-3 bg-white shadow-sm"> 
+            <div class="border rounded p-3 bg-white shadow-sm">
                 {{-- Tiêu đề --}}
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2 class="fw-bold mb-2 pb-1 border-bottom border-3 border-warning">
@@ -52,23 +49,21 @@
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                             <div class="card h-100 shadow-sm service-card">
                                 {{-- Ảnh --}}
-                                <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none"> 
-                                    <img src="{{ Storage::url($post->image) }}"
-                                         class="card-img-top"
-                                         alt="{{ $post->title }}"
-                                         style="aspect-ratio: 3/2; object-fit: cover;">
+                                <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none">
+                                    <img src="{{ Storage::url($post->image) }}" class="card-img-top"
+                                        alt="{{ $post->title }}" style="aspect-ratio: 3/2; object-fit: cover;">
                                 </a>
 
                                 {{-- Body --}}
                                 <div class="card-body d-flex flex-column p-2">
                                     <h6 class="card-title mb-1">
-                                        <a href="{{ route('posts.show', $post->id) }}" 
-                                           class="text-dark text-decoration-none">
+                                        <a href="{{ route('posts.show', $post->id) }}"
+                                            class="text-dark text-decoration-none">
                                             {{ Str::limit($post->title, 60) }}
                                         </a>
                                     </h6>
 
-                                    @if($post->description)
+                                    @if ($post->description)
                                         <p class="card-text text-muted small text-truncate mb-0">
                                             {!! Str::limit(strip_tags($post->description), 80) !!}
                                         </p>
@@ -94,7 +89,7 @@
     {{-- Section QUẢNG CÁO --}}
     <section class="my-4">
         <div class="container custom-container">
-            <div class="border rounded p-3 bg-white shadow-sm"> 
+            <div class="border rounded p-3 bg-white shadow-sm">
                 {{-- Tiêu đề --}}
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2 class="fw-bold mb-2 pb-1 border-bottom border-3 border-primary">
@@ -108,23 +103,21 @@
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                             <div class="card h-100 shadow-sm service-card">
                                 {{-- Ảnh --}}
-                                <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none"> 
-                                    <img src="{{ Storage::url($post->image) }}"
-                                         class="card-img-top"
-                                         alt="{{ $post->title }}"
-                                         style="aspect-ratio: 3/2; object-fit: cover;">
+                                <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none">
+                                    <img src="{{ Storage::url($post->image) }}" class="card-img-top"
+                                        alt="{{ $post->title }}" style="aspect-ratio: 3/2; object-fit: cover;">
                                 </a>
 
                                 {{-- Body --}}
                                 <div class="card-body d-flex flex-column p-2">
                                     <h6 class="card-title mb-1">
-                                        <a href="{{ route('posts.show', $post->id) }}" 
-                                           class="text-dark text-decoration-none">
+                                        <a href="{{ route('posts.show', $post->id) }}"
+                                            class="text-dark text-decoration-none">
                                             {{ Str::limit($post->title, 60) }}
                                         </a>
                                     </h6>
 
-                                    @if($post->description)
+                                    @if ($post->description)
                                         <p class="card-text text-muted small text-truncate mb-0">
                                             {!! Str::limit(strip_tags($post->description), 80) !!}
                                         </p>
@@ -149,7 +142,7 @@
     {{-- Section sản phẩm --}}
     <section class="my-4">
         <div class="container custom-container">
-            <div class="border rounded p-3 bg-white shadow-sm"> 
+            <div class="border rounded p-3 bg-white shadow-sm">
                 {{-- Tiêu đề --}}
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2 class="fw-bold mb-2 pb-1 border-bottom border-3 border-success">
@@ -166,26 +159,26 @@
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                             <div class="card h-100 shadow-sm product-card">
                                 {{-- Badge khuyến mãi --}}
-                                @if($product->sale_price && $product->sale_price < $product->price)
+                                @if ($product->sale_price && $product->sale_price < $product->price)
                                     @php
-                                        $discount = round((($product->price - $product->sale_price) / $product->price) * 100);
+                                        $discount = round(
+                                            (($product->price - $product->sale_price) / $product->price) * 100,
+                                        );
                                     @endphp
-                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 rounded-end" 
-                                         style="z-index: 1; font-size: 0.75rem;">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 rounded-end"
+                                        style="z-index: 1; font-size: 0.75rem;">
                                         -{{ $discount }}%
                                     </div>
                                 @endif
 
                                 {{-- Ảnh --}}
-                                <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none"> 
-                                    @if($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}"
-                                             class="card-img-top"
-                                             alt="{{ $product->name }}"
-                                             style="aspect-ratio: 3/2; object-fit: cover;">
+                                <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none">
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top"
+                                            alt="{{ $product->name }}" style="aspect-ratio: 3/2; object-fit: cover;">
                                     @else
                                         <div class="card-img-top d-flex align-items-center justify-content-center bg-light"
-                                             style="aspect-ratio: 3/2;">
+                                            style="aspect-ratio: 3/2;">
                                             <i class="bi bi-image text-muted" style="font-size: 2rem;"></i>
                                         </div>
                                     @endif
@@ -194,21 +187,21 @@
                                 {{-- Body --}}
                                 <div class="card-body d-flex flex-column p-2">
                                     <h6 class="card-title mb-1">
-                                        <a href="{{ route('products.show', $product->slug) }}" 
-                                           class="text-dark text-decoration-none">
+                                        <a href="{{ route('products.show', $product->slug) }}"
+                                            class="text-dark text-decoration-none">
                                             {{ Str::limit($product->name, 50) }}
                                         </a>
                                     </h6>
 
                                     {{-- Mã sản phẩm --}}
-                                    @if($product->sku)
+                                    @if ($product->sku)
                                         <p class="text-muted small mb-1">
                                             Mã: {{ $product->sku }}
                                         </p>
                                     @endif
 
                                     {{-- Mô tả ngắn --}}
-                                    @if($product->short_description)
+                                    @if ($product->short_description)
                                         <p class="card-text text-muted small mb-2">
                                             {{ Str::limit(strip_tags($product->short_description), 60) }}
                                         </p>
@@ -216,7 +209,7 @@
 
                                     {{-- Giá --}}
                                     <div class="mt-auto">
-                                        @if($product->sale_price && $product->sale_price < $product->price)
+                                        @if ($product->sale_price && $product->sale_price < $product->price)
                                             <div class="d-flex align-items-center">
                                                 <span class="text-danger fw-bold">
                                                     {{ number_format($product->sale_price) }}đ
@@ -234,7 +227,7 @@
 
                                     {{-- Trạng thái tồn kho --}}
                                     <div class="mt-1">
-                                        @if($product->stock_quantity > 0)
+                                        @if ($product->stock_quantity > 0)
                                             <small class="text-success">
                                                 <i class="bi bi-check-circle"></i> Còn hàng
                                             </small>
@@ -257,6 +250,59 @@
                             </div>
                         </div>
                     @endforelse
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container client">
+            <h2 class="text-center mb-4">Đối tác tin cậy</h2>
+            <p class="text-center">Được tin tương bởi các tổ chức hàng đầu</p>
+            <div id="customerCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 1">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 2">
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 3">
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 4">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 5">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 6">
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 7">
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    class="img-fluid" alt="KH 8">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
